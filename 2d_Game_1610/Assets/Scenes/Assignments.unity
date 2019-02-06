@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa5894fdad3bfb429a105d833ea9f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pkmtype: electric
+  pkmtype: grass
   preferance: 0
 --- !u!4 &1819053167
 Transform:
