@@ -14,11 +14,11 @@ public class Heromovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
-        if(Input.GetKeyDown(KeyCode.D)){
+        if(Input.GetKey(KeyCode.D)){
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
         
-        else if(Input.GetKeyDown(KeyCode.A)){
+        else if(Input.GetKey(KeyCode.A)){
             GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
         
