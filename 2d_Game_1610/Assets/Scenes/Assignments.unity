@@ -311,6 +311,8 @@ GameObject:
   - component: {fileID: 953856365}
   - component: {fileID: 953856364}
   - component: {fileID: 953856361}
+  - component: {fileID: 953856362}
+  - component: {fileID: 953856363}
   m_Layer: 0
   m_Name: Cats
   m_TagString: Untagged
@@ -366,6 +368,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &953856362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953856360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe33daf65bd6eb74e9b79866e2de6b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinValue: 100
+--- !u!58 &953856363
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953856360}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
 --- !u!114 &953856364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +479,6 @@ GameObject:
   - component: {fileID: 1817188981}
   - component: {fileID: 1817188980}
   - component: {fileID: 1817188979}
-  - component: {fileID: 1817188984}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -469,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  jumpspeed: 4
 --- !u!50 &1817188980
 Rigidbody2D:
   serializedVersion: 4
@@ -578,19 +609,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1817188984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817188978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9545ab9f12103a84b955720a431929fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpspeed: 4
 --- !u!1 &2069021770
 GameObject:
   m_ObjectHideFlags: 0

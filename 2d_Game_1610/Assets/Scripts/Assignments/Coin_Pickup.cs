@@ -9,14 +9,14 @@ public class Coin_Pickup : Baisic_Pickup
 
 
 
-    void OnTriggerEnter2D(Collider2D other){
-        if(GameObject.other.name == "hero"){
+    //void OnTriggerEnter2D(Collider2D other){
+        //if(GameObject.other.name == "hero"){
             //player collect coin
-        }
-        else{
+        //}
+        //else{
             //not player
-        }
-    }
+       // }
+   // }
 
     // Start is called before the first frame update
     void Start()
