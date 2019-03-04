@@ -315,8 +315,9 @@ GameObject:
   - component: {fileID: 953856363}
   - component: {fileID: 953856366}
   - component: {fileID: 953856367}
+  - component: {fileID: 953856368}
   m_Layer: 0
-  m_Name: Cats
+  m_Name: pratice scrip slave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,13 +460,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953856360}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc655489432c85e42afdeffceb5d4b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   suspect: cook
   room: 
+--- !u!114 &953856368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953856360}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283810ae1b858d34fb8eeae52806817d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weather: 
 --- !u!1 &1397912640
 GameObject:
   m_ObjectHideFlags: 0
