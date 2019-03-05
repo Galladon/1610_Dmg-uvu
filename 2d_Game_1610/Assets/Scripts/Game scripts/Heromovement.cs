@@ -9,14 +9,19 @@ public class Heromovement : MonoBehaviour {
     public float moveSpeed;
     public float jumpspeed;
     // jump requierments
-
+    public Transform groundCheck;
+    public float groundCheckRadius;
     private bool grounded;
+    public LayerMask whatIsGround;
 
     // Start is called before the first frame update
     void Start()
     {   //need to refine, default true.    
-        grounded = true;
         
+        
+    }
+    void Fixedupdate(){
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
 
     // Update is called once per frame
@@ -32,7 +37,16 @@ public class Heromovement : MonoBehaviour {
         }
         //player jump
         if(Input.GetKeyDown(KeyCode.W) && grounded){
-             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpspeed);
+            Jump();
+        
         }
+        
     }
+void Jump(){
+    
+             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpspeed);
+
+    
+}
+
 }
