@@ -9,6 +9,8 @@ public class CoinPickup : MonoBehaviour{
          if(other.name == "Hero"){
               print("you've collected a flower! ");
 
+              Scoremanager.AddPoints(coinValue);
+
               Destroy(gameObject);
 
          }
