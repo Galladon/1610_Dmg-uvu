@@ -5,12 +5,12 @@ using UnityEngine;
 public class HeroHP : MonoBehaviour
 
 {
-    public int flowerPoints; // flower theme for game, this is hp
+    public int currentHP; // flower theme for game, this is hp
     
 
     // Start is called before the first frame update
     void Start()
-    {
+    { currentHP = 3;
         
     }
 
