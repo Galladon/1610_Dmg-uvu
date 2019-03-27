@@ -5,6 +5,7 @@ using UnityEngine;
 public class Loops : MonoBehaviour
 
 { int bottles = 1;
+int skittles = 1;
 public bool isRaining = true;
 
 
@@ -23,6 +24,12 @@ public bool isRaining = true;
 //     bottles ++;
     
 //}
+while(skittles <= 300){
+    print("I only have"+skittles+"skittles? guess ill have another");
+    skittles ++;
+}
+
+
 
     }
 
