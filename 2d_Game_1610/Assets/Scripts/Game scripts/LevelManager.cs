@@ -25,7 +25,34 @@ public class LevelManager : MonoBehaviour
         player = GameObject.Find("Hero");
         
     }
-    
+    public void RespawnPlayer(){
+        StartCoroutine ( "RespawnPlayerCo");
+    }
+    public IEnumerator RespawnPlayerCo(){
+        //death particles
+        Instantiate( deathParticle, pcRigid.transform.position, pcRigid.transform.rotation );
+        player.SetActive(false);
+        player.GetComponent<Renderer> ().enabled = false;
+        //Gravity Reset
+        gravityStore = pcRigid.GetComponent<Rigidbody2D>().gravityScale;
+        pcRigid.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        pcRigid.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        //point penalty
+        Scoremanager.AddPoints(- pointPenaltyOnDeath);
+        //debug manager
+        Debug.Log ("Hero Respawn");
+        //respawn delay
+        yield return new WaitForSeconds (respawnDelay);
+        //gravity restore
+        pcRigid.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
+        //match hero's transform position
+        pcRigid.transform.position = currentCheckPoint.transform.position;
+        //Show PC
+        player.SetActive(true);
+        player.GetComponent<Renderer>(). enabled = true;
+        Instantiate (respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
+
+    }
 
     // Update is called once per frame
     void Update()
