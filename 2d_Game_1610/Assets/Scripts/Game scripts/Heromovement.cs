@@ -41,7 +41,12 @@ public class Heromovement : MonoBehaviour {
             Jump();
         
         }
-        
+        //Player Flip
+        if(GetComponent<Rigidbody2D>().velocity.x>0)
+            transform.localScale = new Vector3(4f,4f,2f);
+
+        else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        transform.localScale = new Vector3(-4f,4f,2f);
     }
 void Jump(){
     
