@@ -12,6 +12,7 @@ public class Heromovement : MonoBehaviour {
     public Transform groundCheck;
     public float groundCheckRadius;
     private bool grounded;
+    private bool doubleJump;
     
     public LayerMask whatIsGround;
 
@@ -40,6 +41,15 @@ public class Heromovement : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.W) && grounded){
             Jump();
         
+        }
+        //DoubleJump
+        if(grounded){
+            doubleJump = false;
+        }
+
+        if(Input.GetKeyDown( KeyCode.W)&& !doubleJump && !grounded){
+            Jump();
+            doubleJump = true;
         }
         //Player Flip
         if(GetComponent<Rigidbody2D>().velocity.x>0)
