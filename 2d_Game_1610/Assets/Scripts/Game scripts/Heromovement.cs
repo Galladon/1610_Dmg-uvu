@@ -15,6 +15,7 @@ public class Heromovement : MonoBehaviour {
     private bool doubleJump;
     
     public LayerMask whatIsGround;
+    private float moveVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,17 @@ public class Heromovement : MonoBehaviour {
     //player movement left/right
     void Update(){
         if(Input.GetKey(KeyCode.D)){
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            moveVelocity = moveSpeed;
+            // GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
         
         else if(Input.GetKey(KeyCode.A)){
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            moveVelocity = -moveSpeed;
+            // GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
+        
+        GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+        //moveVelocity = 0f;
         //player jump
         if(Input.GetKeyDown(KeyCode.W) && grounded){
             Jump();
@@ -51,6 +57,7 @@ public class Heromovement : MonoBehaviour {
             Jump();
             doubleJump = true;
         }
+        
         //Player Flip
         if(GetComponent<Rigidbody2D>().velocity.x>0)
             transform.localScale = new Vector3(4f,4f,2f);
