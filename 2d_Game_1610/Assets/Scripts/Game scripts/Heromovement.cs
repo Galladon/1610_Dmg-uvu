@@ -16,11 +16,12 @@ public class Heromovement : MonoBehaviour {
     
     public LayerMask whatIsGround;
     private float moveVelocity;
-
+    public Animator animator; 
     // Start is called before the first frame update
     void Start()
-    {   //need to refine, default true.    
-        
+    {   //Resets animation    
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isJumping", false);
         
     }
     void FixedUpdate(){
@@ -33,16 +34,28 @@ public class Heromovement : MonoBehaviour {
     void Update(){
         if(Input.GetKey(KeyCode.D)){
             moveVelocity = moveSpeed;
-            // GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            animator.SetBool("isWalking", true);
+             //GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else if(Input.GetKeyUp(KeyCode.D)){
+            animator.SetBool("isWalking", false);
         }
         
-        else if(Input.GetKey(KeyCode.A)){
+         if(Input.GetKey(KeyCode.A)){
             moveVelocity = -moveSpeed;
+            animator.SetBool("isWalking", true); 
             // GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+         }
+        
+           
+        else if(Input.GetKeyUp (KeyCode.A)){
+            animator.SetBool("isWalking", false);
+        
         }
+
         
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
-        //moveVelocity = 0f;
+       
         //player jump
         if(Input.GetKeyDown(KeyCode.W) && grounded){
             Jump();
@@ -57,6 +70,7 @@ public class Heromovement : MonoBehaviour {
             Jump();
             doubleJump = true;
         }
+         moveVelocity = 0f;
         
         //Player Flip
         if(GetComponent<Rigidbody2D>().velocity.x>0)
@@ -64,11 +78,12 @@ public class Heromovement : MonoBehaviour {
 
         else if (GetComponent<Rigidbody2D>().velocity.x < 0)
         transform.localScale = new Vector3(-4f,4f,2f);
-    }
+    } 
+   
 void Jump(){
     
              GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpSpeed);
-
+animator.SetBool("isJumping", true);
     
 }
 
