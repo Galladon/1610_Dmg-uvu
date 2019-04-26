@@ -16,14 +16,11 @@ public class Heromovement : MonoBehaviour {
     
     public LayerMask whatIsGround;
     private float moveVelocity;
-    //public Animator animator; 
+    
     
     // Start is called before the first frame update
     void Start()
-    {   //Resets animation    
-        // animator.SetBool("Hero_Run", false);
-        // animator.SetBool("Hero_Jump", false);
-        // animator = GetComponent<Animator>();
+    {  
     }
     void FixedUpdate(){
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
@@ -35,22 +32,22 @@ public class Heromovement : MonoBehaviour {
     void Update(){
         if(Input.GetKey(KeyCode.D)){
             moveVelocity = moveSpeed;
-            // animator.SetBool("Hero_Run", true);
+            
              GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
         else if(Input.GetKeyUp(KeyCode.D)){
-            // animator.SetBool("Hero_Run", false);
+            
         }
         
          if(Input.GetKey(KeyCode.A)){
             moveVelocity = -moveSpeed;
-            // animator.SetBool("Hero_Run", true); 
+            
              GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
          }
         
            
         else if(Input.GetKeyUp (KeyCode.A)){
-            // animator.SetBool("Hero_Run", false);
+            
         
         }
 
@@ -65,13 +62,13 @@ public class Heromovement : MonoBehaviour {
         //DoubleJump
         if(grounded){
             doubleJump = false;
-            // animator.SetBool("Hero_Jump", false);
+            
         }
 
         if(Input.GetKeyDown( KeyCode.W)&& !doubleJump && !grounded){
             Jump();
             doubleJump = true;
-            // animator.SetBool("Hero_Jump", true);
+            
         }
          moveVelocity = 0f;
         
@@ -86,7 +83,7 @@ public class Heromovement : MonoBehaviour {
 void Jump(){
     
              GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpSpeed);
-                // animator.SetBool("Hero_Jump", true);
+                
     
 }
 
