@@ -1,22 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroHP : MonoBehaviour
 
 {
-    public int currentHP; // flower theme for game, this is hp
+    public float heroHP = 100; 
+    public Slider HP;
+    private float currentHP;
     
 
     // Start is called before the first frame update
     void Start()
-    { currentHP = 3;
+    { currentHP = heroHP;
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    public void GetHurt(float damage){
+        currentHP -= damage;
+        HP.value = currentHP;
+
     }
 }
+  
