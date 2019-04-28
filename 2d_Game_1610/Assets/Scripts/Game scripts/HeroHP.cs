@@ -7,7 +7,7 @@ public class HeroHP : MonoBehaviour
 
 {
     public float heroHP = 100; 
-    public Slider HP;
+    public Slider healthBar;
     public float currentHP;
     
 
@@ -19,7 +19,7 @@ public class HeroHP : MonoBehaviour
     // Update is called once per frame
     public void GetHurt(float damage){
       currentHP -= damage;
-        HP.value = currentHP;
+        healthBar.value = currentHP; // Error Is Here
 
     }
 }
