@@ -8,18 +8,17 @@ public class HeroHP : MonoBehaviour
 {
     public float heroHP = 100; 
     public Slider HP;
-    private float currentHP;
+    public float currentHP;
     
 
     // Start is called before the first frame update
-    void Start()
-    { currentHP = heroHP;
-        
+    void Start(){ 
+        currentHP = heroHP;
     }
 
     // Update is called once per frame
     public void GetHurt(float damage){
-        currentHP -= damage;
+      currentHP -= damage;
         HP.value = currentHP;
 
     }

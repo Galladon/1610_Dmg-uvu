@@ -9,14 +9,14 @@ public class HeroKill : MonoBehaviour
 //            Destroy(other);
 //        }
 //    }
-public LevelManager levelManager;
+public LevelManager gameManager;
 void start (){
-    levelManager = FindObjectOfType <LevelManager>();
+    gameManager = FindObjectOfType <LevelManager>();
 
 }
 void OnTriggerEnter2D(Collider2D other){
     if(other.name == "Hero"){
-        levelManager.RespawnPlayer();
+        gameManager.RespawnPlayer();
     }
 }
 }

@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroHP: 100
   HP: {fileID: 0}
+  currentHP: 0
 --- !u!114 &1401043838192623941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.1}
+  m_Size: {x: 0.2, y: 0.075}
   m_EdgeRadius: 0
 --- !u!114 &1401043838192624059
 MonoBehaviour:
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b560df6d4f431794c880b4f836965e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!61 &1401043838192624058
 BoxCollider2D:
   m_ObjectHideFlags: 0
