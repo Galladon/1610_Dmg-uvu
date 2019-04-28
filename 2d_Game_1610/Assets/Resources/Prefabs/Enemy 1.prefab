@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1401043838192623937}
   - component: {fileID: 1401043838192623938}
   - component: {fileID: 1401043838192623943}
-  - component: {fileID: 1401043838192623936}
   - component: {fileID: 1401043838192623941}
   - component: {fileID: 1401043838192623942}
   - component: {fileID: 1401043838192623940}
@@ -104,21 +103,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!114 &1401043838192623936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401043838192623939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b8148f37d927b445bd2be4157d2ffb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroHP: 100
-  HP: {fileID: 0}
-  currentHP: 0
 --- !u!114 &1401043838192623941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.204, y: 0.102}
+    oldSize: {x: 0.21473685, y: 0.107368425}
     newSize: {x: 0.204, y: 0.084}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -216,7 +200,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.204, y: 0.102}
+    oldSize: {x: 0.21473685, y: 0.107368425}
     newSize: {x: 0.204, y: 0.084}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
