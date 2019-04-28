@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Renderer> ().enabled = false;
         //Gravity Reset
         gravityStore = pcRigid.GetComponent<Rigidbody2D>().gravityScale;
-        pcRigid.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        pcRigid.GetComponent<Rigidbody2D>().gravityScale = 1f;
         pcRigid.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         //point penalty
         Scoremanager.AddPoints(- pointPenaltyOnDeath);
@@ -52,6 +52,9 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Renderer>(). enabled = true;
         Instantiate (respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 
+    }
+    public void SetSpawn(float x,  float y){
+        currentCheckPoint.transform.position = new Vector2(x, y);
     }
 
     // Update is called once per frame
